@@ -20,8 +20,8 @@ Jumlah = input('Masukkan Jumlah Tiket : ')
 harga_satuan =input('Masukkan Harga Tiket : ')
 total_harga = int(Jumlah) * float(harga_satuan)
 potongan_harga = 0
-#jika poyongan harga lebih dari 250.000 maka mendapat diskon 35%
-#jika poyongan harga lebih dari 100.000 maka mendapat diskon 15%
+#jika potongan harga lebih dari 250.000 maka mendapat diskon 35%
+#jika potongan harga lebih dari 100.000 maka mendapat diskon 15%
 if total_harga >= 250.000:
     potongan_harga = 0.35
 elif total_harga >= 100.000:
