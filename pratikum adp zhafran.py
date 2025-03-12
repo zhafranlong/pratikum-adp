@@ -2,38 +2,38 @@
 #DAFTAR_FILM 
 film1 = '1 kakak 7 ponakan'
 film2 = 'utusan iblis'
-film3 = 'bayang-bayang anak jahanam'
+film3 = 'azzamine'
 film4 = 'sebelum 7 hari'
 film5 = 'perayaan mati rasa'
 #harga tiket
-harga1 = 40.000
-harga2 = 45.000
-harga3 = 50.000
-harga4 = 55.000
-harga5 = 60.000
-#jika total pembelian tiket lebih dari 100.000 maka akan mendapat diskon 15%
-#jika total pembelian tiket lebih dari 250.000 maka akan mendapat diskon 35%
+harga1 = 40000
+harga2 = 45000
+harga3 = 50000
+harga4 = 55000
+harga5 = 60000
 #menampilkan struk pemesanan 
-Nama = input('Masukkan Nama Anda : ')
-Judul = input('Masukkan Judul Film : ')
-Jumlah = input('Masukkan Jumlah Tiket : ')
-harga_satuan =input('Masukkan Harga Tiket : ')
-total_harga = int(Jumlah) * float(harga_satuan)
-potongan_harga = 0
+Nama_pembeli = input('Masukkan Nama Anda : ')
+Judul_film = input('Masukkan Judul Film :')
+Jumlah_tiket = input('Masukkan Jumlah Tiket : ')
+harga_tiket =input('Masukkan Harga Tiket : ')
+total_harga = int(Jumlah_tiket) * float(harga_tiket)
+diskon = 0
 #jika potongan harga lebih dari 250.000 maka mendapat diskon 35%
 #jika potongan harga lebih dari 100.000 maka mendapat diskon 15%
-if total_harga >= 250.000:
-    potongan_harga = 0.35
-elif total_harga >= 100.000:
-    potongan_harga = 0.15
-jumlah_potongan = total_harga * potongan_harga
+
+if 100000 <= total_harga < 250000:
+    diskon = 0.15
+elif total_harga >= 250000:
+    diskon = 0.35
+jumlah_potongan = total_harga * diskon
 total_setelah_diskon = total_harga - jumlah_potongan
 print('=== STRUK PEMESANAN ===')
-print('Nama : ', Nama)
-print('Judul Film : ', Judul)
-print('Jumlah Tiket : ', Jumlah)
-print('Harga Satuan : ', harga_satuan)
+print('Nama : ', Nama_pembeli)
+print('Judul Film : ', Judul_film)
+print('Jumlah Tiket : ', Jumlah_tiket)
+print('Harga Satuan : ', harga_tiket)
 print('Total Harga : ', total_harga)
-print('Potongan Harga : ', potongan_harga)
+print('Potongan Harga : ', diskon)
+print('Jumlah Potongan : ', jumlah_potongan)
 print('Total yang harus dibayar : ', total_setelah_diskon)
 print('=== TERIMA KASIH TELAH MEMESAN TIKET DI BIOSKOP KAMI ===')
