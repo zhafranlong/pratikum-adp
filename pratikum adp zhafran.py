@@ -25,8 +25,8 @@ if 100000 <= total_harga < 250000:
     diskon = 0.15
 elif total_harga >= 250000:
     diskon = 0.35
-jumlah_potongan = total_harga * diskon
-total_setelah_diskon = total_harga - jumlah_potongan
+jumlah_diskon = total_harga * diskon
+total_setelah_diskon = total_harga - jumlah_diskon
 print('=== STRUK PEMESANAN ===')
 print('Nama : ', Nama_pembeli)
 print('Judul Film : ', Judul_film)
@@ -34,6 +34,6 @@ print('Jumlah Tiket : ', Jumlah_tiket)
 print('Harga Satuan : ', harga_tiket)
 print('Total Harga : ', total_harga)
 print('Potongan Harga : ', diskon)
-print('Jumlah Potongan : ', jumlah_potongan)
+print('Jumlah Potongan : ', jumlah_diskon)
 print('Total yang harus dibayar : ', total_setelah_diskon)
 print('=== TERIMA KASIH TELAH MEMESAN TIKET DI BIOSKOP KAMI ===')
