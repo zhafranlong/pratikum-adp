@@ -1,0 +1,24 @@
+# Program untuk menghitung pertumbuhan investasi berdasarkan masukan pengguna
+
+# Pengguna harus memasukkan modal awal,suku bunga bulanan,target investasi yang ingin dicapai
+# M =modal awal
+# r =suku bunga bulanan
+# T =target yang investasi ingin dicapai
+
+M = int(input("Masukkan modal awal/(M): "))
+r = int(input("Masukkan suku bunga tahunan/(r)(%): "))
+T = int(input("Masukkan target investasi/(T): "))
+
+# Setiap tahun modal dan suku bunga bertambah sampai target tercapai
+
+tahun=0
+modal_sekarang = M
+
+print("Progres Investasi:")
+while modal_sekarang <= T:
+    tahun = tahun + 1
+    modal_sekarang += modal_sekarang * (r / 100)
+    print(f"Tahun ke-{tahun}: Rp{modal_sekarang:}")
+
+# Menampilkan hasil total tahun yang dibutuhkan
+print(f"Target tercapai dalam {tahun} tahun.")
