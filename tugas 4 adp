@@ -1,0 +1,13 @@
+banyak_baris = int(input("Masukkan banyak baris: "))
+banyak_kolom = int(input("Masukkan banyak kolom: "))
+# Fungsi untuk menampilkan pola
+def tampilkan_pola(banyak_baris, banyak_kolom):
+    for i in range(banyak_baris):
+        for j in range(banyak_kolom):
+            if (i + j) % 2 == 0:
+                print("X", end=" ")  
+            else:
+                print("O", end=" ")  
+        print()  
+
+tampilkan_pola(banyak_baris, banyak_kolom)
