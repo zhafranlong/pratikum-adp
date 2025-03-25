@@ -1,0 +1,22 @@
+import re
+
+def validasi_password(password):
+    # Kriteria password yang valid
+    if (len(password) >= 8 and
+        re.search("[a-z]", password) and
+        re.search("[A-Z]", password) and
+        re.search("[0-9]", password) and
+        re.search("[!@#$%^&*()_+=-{}[\]:;\"'<>,.?/~`]", password)):
+        return True
+    return False
+
+def minta_password():
+    while True:
+        password = input("Masukkan password: ")
+        if validasi_password(password):
+            print("Password Valid!")
+            break
+        else:
+            print("Password tidak valid. Silakan coba lagi.")
+
+minta_password()
