@@ -1,0 +1,39 @@
+while True:
+    n = int(input("Input banyak data n: "))
+    
+    x_list = []
+    f_list = []
+    g_list = []
+    h_list = []
+
+    for i in range(n):
+        x = float(input(f"Input x ke-{i+1}: "))
+
+        # Hitung f(x)
+        if x > 0:
+            fx = 4 * x**3 + 7 * x - 5
+        elif x < 0:
+            fx = 3 * x**2 - 5 * x + 1
+        else:
+            fx = 0  # Asumsi f(0) = 0
+
+        # Hitung g(x) dan h(x)
+        gx = fx**2 - fx
+        hx = fx * gx
+
+        # Simpan hasil ke list
+        x_list.append(x)
+        f_list.append(fx)
+        g_list.append(gx)
+        h_list.append(hx)
+
+    # Output tabel
+    print("Output 2:")
+    print(f"{'No':<5}{'x':<10}{'f(x)':<15}{'g(x)':<15}{'h(x)':<15}")
+    for i in range(n):
+        print(f"{i+1:<5}{x_list[i]:<10}{f_list[i]:<15.2f}{g_list[i]:<15.2f}{h_list[i]:<15.2f}")
+
+    # Tanya apakah input ulang
+    ulang = input("Input nilai x lagi Y/N? ").strip().upper()
+    if ulang != 'Y':
+        break
