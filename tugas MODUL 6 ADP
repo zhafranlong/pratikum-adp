@@ -1,0 +1,50 @@
+# Peta nilai huruf ke nilai angka
+indeks_nilai = {
+    "A": 4.00,
+    "A-": 3.75,
+    "B+": 3.50,
+    "B": 3.00,
+    "B-": 2.75,
+    "C+": 2.50,
+    "C": 2.00,
+    "D": 1.00,
+    "E": 0.00
+}
+
+# Input jumlah mahasiswa dan jumlah mata kuliah
+jumlah_mahasiswa = int(input("Masukkan jumlah mahasiswa: "))
+jumlah_matkul = int(input("Masukkan jumlah mata kuliah: "))
+
+# Array untuk menyimpan data mahasiswa
+data_mahasiswa = []
+
+# Input data nilai mahasiswa
+for i in range(jumlah_mahasiswa):
+    nama = input(f"Masukkan nama mahasiswa ke-{i+1}: ")
+    nilai_matkul = []
+    total_nilai = 0
+    for j in range(jumlah_matkul):
+        nilai = input(f"  Nilai mata kuliah ke-{j+1} (A, A-, ...): ").upper()
+        if nilai in indeks_nilai:
+            nilai_angka = indeks_nilai[nilai]
+            nilai_matkul.append(nilai_angka)
+            total_nilai += nilai_angka
+        else:
+            print("  Nilai tidak valid, gunakan format A, A-, B+, dll.")
+            exit()
+
+    ip = total_nilai / jumlah_matkul
+    data_mahasiswa.append([nama, nilai_matkul, ip])
+
+# Urutkan berdasarkan IP dari tinggi ke rendah
+data_mahasiswa.sort(key=lambda x: x[2], reverse=True)
+
+# Tampilkan hasil
+print("Daftar IP Mahasiswa (Urut dari tertinggi):")
+print("="*50)
+print(f"{'Nama':<15}{'Nilai':<25}{'IP':<5}")
+print("="*50)
+for mhs in data_mahasiswa:
+    nilai_str = ', '.join([f"{n:.2f}" for n in mhs[1]])
+    print(f"{mhs[0]:<15}{nilai_str:<25}{mhs[2]:.2f}")
+[]
