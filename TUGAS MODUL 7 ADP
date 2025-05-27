@@ -1,0 +1,42 @@
+def hitung_glbb(v0, a, t):
+    vt = v0 + a * t
+    s = v0 * t + 0.5 * a * t**2
+    return vt, s
+
+def main():
+    n = int(input("Masukkan jumlah data (n): "))
+
+    # List untuk menyimpan data
+    v0_list = []
+    a_list = []
+    t_list = []
+    vt_list = []
+    s_list = []
+
+    # Input dan perhitungan
+    for i in range(n):
+        print(f"Input ke-{i+1}:")
+        v0 = float(input("  Kecepatan awal (m/s): "))
+        a = float(input("  Percepatan (m/s^2): "))
+        t = float(input("  Waktu (s): "))
+
+        vt, s = hitung_glbb(v0, a, t)
+
+        # Simpan ke dalam list
+        v0_list.append(v0)
+        a_list.append(a)
+        t_list.append(t)
+        vt_list.append(vt)
+        s_list.append(s)
+
+    # Tampilkan hasil dalam bentuk tabel
+    print("Hasil Perhitungan (GLBB):")
+    print("{:<5} {:<17} {:<12} {:<10} {:<20} {:<15}".format(
+        "n", "Kecepatan Awal", "Percepatan", "Waktu", "Kecepatan Akhir", "Jarak Tempuh"))
+
+    for i in range(n):
+        print("{:<5} {:<17} {:<12} {:<10} {:<20} {:<15}".format(
+            i+1, v0_list[i], a_list[i], t_list[i], vt_list[i], s_list[i]))
+
+# Jalankan program
+main()
